@@ -1,4 +1,4 @@
-import GlobalStyle from "./GlobalStyle";
+import { GlobalStyle, Ecommerce, Body } from "./GlobalStyle";
 import Filtros from "./components/Filtros";
 import PaginaListaProdutos from "./components/ListaProdutos/PaginaListaProdutos";
 import PaginaCarrinho from "./components/Carrinho/PaginaCarrinho";
@@ -6,14 +6,14 @@ import PaginaCarrinho from "./components/Carrinho/PaginaCarrinho";
 
 function App() {
   return (
-    <>
+    <Body>
       <GlobalStyle />
-      <div>
+      <Ecommerce >
         <Filtros />
         <PaginaListaProdutos />
         <PaginaCarrinho />
-      </div>
-    </>
+      </Ecommerce>
+    </Body>
   );
 }
 
