@@ -1,13 +1,17 @@
 import React from "react";
-import { StylePaginaCarrinho } from "./style";
+import { CarrinhoNav, ListaItens } from "./style";
 import Itens from "../Itens";
 
 const PaginaCarrinho = () => {
   return (
-    <>
-      <StylePaginaCarrinho>Página Carrinho</StylePaginaCarrinho>
-      <Itens />
-    </>
+    <CarrinhoNav>
+      <h2>Carrinho</h2>
+      <ListaItens>
+        <Itens />
+        <Itens />
+      </ListaItens>
+      <p>Valor Total: 0</p>
+    </CarrinhoNav>
   );
 };
 

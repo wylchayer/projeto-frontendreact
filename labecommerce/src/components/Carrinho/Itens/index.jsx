@@ -1,9 +1,13 @@
 import React from 'react'
-import { StyleItens } from './style'
+import { ProdutoCarrinho } from './style'
 
 const Itens = () => {
   return (
-    <StyleItens>Item Carrinho</StyleItens>
+    <ProdutoCarrinho>
+      <p>0x</p>
+      <p>Nome do Produto</p>
+      <button>Remover</button>
+    </ProdutoCarrinho>
   )
 }
 
