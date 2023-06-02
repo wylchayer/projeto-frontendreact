@@ -10,17 +10,37 @@ function App() {
 
   const [minFilter, setMinFilter] = useState()
   const [maxFilter, setMaxFilter] = useState()
-  const [searchFilter, setSearchFilter] = useState('')
+  const [searchFilter, setSearchFilter] = useState('teste')
   const [cart, setCart] = useState('')
   const [amount, setAmount] = useState()
+
+  const handleChange = (event, setStatus) => {
+    setStatus(event.target.value)
+  }
 
   return (
     <Body>
       <GlobalStyle />
       <Ecommerce >
-        <Filtros />
-        <PaginaListaProdutos productsList={productsList} />
-        <PaginaCarrinho />
+        <Filtros
+          setMinFilter={setMinFilter}
+          setMaxFilter={setMaxFilter}
+          setSearchFilter={setSearchFilter}
+          handleChange={handleChange}
+        />
+        <PaginaListaProdutos
+          productsList={productsList}
+          cart={cart}
+          setCart={setCart}
+          amount={amount}
+          setAmount={setAmount}
+        />
+        <PaginaCarrinho
+          cart={cart}
+          setCart={setCart}
+          amount={amount}
+          setAmount={setAmount}
+        />
       </Ecommerce>
     </Body>
   );
