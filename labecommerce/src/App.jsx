@@ -2,6 +2,7 @@ import { GlobalStyle, Ecommerce, Body } from "./GlobalStyle";
 import Filtros from "./components/Filtros";
 import PaginaListaProdutos from "./components/ListaProdutos/PaginaListaProdutos";
 import PaginaCarrinho from "./components/Carrinho/PaginaCarrinho";
+import productsList from "./assents/productsList";
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <GlobalStyle />
       <Ecommerce >
         <Filtros />
-        <PaginaListaProdutos />
+        <PaginaListaProdutos productsList={productsList} />
         <PaginaCarrinho />
       </Ecommerce>
     </Body>
