@@ -3,11 +3,14 @@ import { useState } from "react";
 import Produtos from "../Produtos";
 import { Main, CabecalhoListaProdutos, ListaProdutos } from "./style";
 
-const PaginaListaProdutos = ({ productsList }) => {
+const PaginaListaProdutos = (props) => {
+
+  const {productsList, cart, setCart, amount, setAmount} = props
 
   const [ordination, setOrdination] = useState('Crescente')
 
   const handleOrdination = (event) => {
+    console.log(event);
     setOrdination(event.target.value)
   }
   
