@@ -1,15 +1,15 @@
 import React from "react";
 import { CartaoProduto, DescricaoProduto } from "./style";
 
-const Produtos = () => {
+const Produtos = ({name, value, imageUrl}) => {
   return (
     <CartaoProduto>
       <figure>
-        <img src="https://picsum.photos/200/300" alt="img not found" />
+        <img src={imageUrl} alt="img not found" />
       </figure>
       <DescricaoProduto>
-        <p>Nome do Produto</p>
-        <p>Valor</p>
+        <p>{name}</p>
+        <p>{value}</p>
         <button>Adicionar ao Carrinho</button>
       </DescricaoProduto>
     </CartaoProduto>

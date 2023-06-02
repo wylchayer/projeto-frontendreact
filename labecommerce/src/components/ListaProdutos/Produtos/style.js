@@ -6,6 +6,8 @@ export const CartaoProduto = styled.div`
 
   img {
     border: 1px solid black;
+    height: 300px;
+    width: 200px;
   }
 `;
 

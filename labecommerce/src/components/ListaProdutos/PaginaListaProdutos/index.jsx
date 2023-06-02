@@ -2,11 +2,11 @@ import React from "react";
 import Produtos from "../Produtos";
 import { Main, CabecalhoListaProdutos, ListaProdutos } from "./style";
 
-const PaginaListaProdutos = () => {
+const PaginaListaProdutos = ({ productsList }) => {
   return (
     <Main>
       <CabecalhoListaProdutos>
-        <p>Quantidade de produtos:</p>
+        <p>Quantidade de produtos: {productsList.length}</p>
         <div>
           <p>
             Ordenação:
@@ -18,9 +18,15 @@ const PaginaListaProdutos = () => {
         </div>
       </CabecalhoListaProdutos>
       <ListaProdutos>
-        <Produtos />
-        <Produtos />
-        <Produtos />
+        {productsList.map(element => {
+          return (
+            <Produtos
+              name={element.name}
+              value={element.value}
+              imageUrl={element.imageUrl}
+            />
+          )
+        })}
       </ListaProdutos>
     </Main>
   );
