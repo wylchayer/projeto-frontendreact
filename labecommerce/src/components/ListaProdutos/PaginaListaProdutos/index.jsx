@@ -1,8 +1,16 @@
 import React from "react";
+import { useState } from "react";
 import Produtos from "../Produtos";
 import { Main, CabecalhoListaProdutos, ListaProdutos } from "./style";
 
 const PaginaListaProdutos = ({ productsList }) => {
+
+  const [ordination, setOrdination] = useState('Crescente')
+
+  const handleOrdination = (event) => {
+    setOrdination(event.target.value)
+  }
+  
   return (
     <Main>
       <CabecalhoListaProdutos>
@@ -10,7 +18,7 @@ const PaginaListaProdutos = ({ productsList }) => {
         <div>
           <p>
             Ordenação:
-            <select>
+            <select onChange={handleOrdination} >
               <option value="Crescente">Crescente</option>
               <option value="Decrescente">Decrescente</option>
             </select>
