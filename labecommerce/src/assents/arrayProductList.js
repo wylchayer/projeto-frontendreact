@@ -1,4 +1,4 @@
-const productsList = [
+const arrayProductList = [
     {
       id: 1,
       name: "produto 1",
@@ -19,4 +19,4 @@ const productsList = [
     }
   ];
 
-  export default productsList
+  export default arrayProductList
