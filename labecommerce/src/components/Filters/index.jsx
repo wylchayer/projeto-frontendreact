@@ -1,7 +1,7 @@
 import React from "react";
-import { FiltrosNav, FiltrosForm } from "./style";
+import { NavFilters, FormFilters } from "./style";
 
-const Filtros = (props) => {
+const Filters = (props) => {
   const {
     setMinFilter,
     setMaxFilter,
@@ -10,9 +10,9 @@ const Filtros = (props) => {
   } = props;
 
   return (
-    <FiltrosNav>
+    <NavFilters>
       <h2>Filtros</h2>
-      <FiltrosForm>
+      <FormFilters>
         <div className="inputsFiltro">
           <label id="valorMinimo">Valor mínimo:</label>
           <input type="number" min={0} id="valorMinimo" onChange={(event) => handleChange(event, setMinFilter)} onKeyUp={(event) => {return (event.key==='-' ? event.target.value='' : null)}} />
@@ -25,9 +25,9 @@ const Filtros = (props) => {
           <label id="busca">Busca por nome:</label>
           <input type="text" id="busca" onChange={(event) => handleChange(event,setSearchFilter)} />
         </div>
-      </FiltrosForm>
-    </FiltrosNav>
+      </FormFilters>
+    </NavFilters>
   );
 };
 
-export default Filtros;
+export default Filters;

@@ -4,7 +4,7 @@ export const Main = styled.main`
     padding: 10px;
 `;
 
-export const CabecalhoListaProdutos = styled.div`
+export const HeaderProductList = styled.div`
     display: flex;
     margin-bottom: 10px;
     flex-direction: row;
@@ -14,7 +14,7 @@ export const CabecalhoListaProdutos = styled.div`
     }
 `
 
-export const ListaProdutos = styled.div`
+export const List = styled.div`
     display: flex;
     justify-content: space-evenly;
 `

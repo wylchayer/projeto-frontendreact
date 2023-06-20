@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const CarrinhoNav = styled.nav`
+export const NavCart = styled.nav`
     border: 1px solid black;
     padding: 10px;
 
@@ -13,7 +13,7 @@ export const CarrinhoNav = styled.nav`
     }
 `
 
-export const ListaItens = styled.div`
+export const ItemsList = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;

@@ -9,9 +9,9 @@ export const GlobalStyle = styled.createGlobalStyle`
 `;
 
 export const Body = styled.styled.div`
- display: flex;
- justify-content: center;
- `
+  display: flex;
+  justify-content: center;
+`;
 
 export const Ecommerce = styled.styled.div`
   display: grid;
@@ -19,4 +19,4 @@ export const Ecommerce = styled.styled.div`
   flex-grow: 1;
   margin: 10px;
   max-width: 1400px;
-`
+`;

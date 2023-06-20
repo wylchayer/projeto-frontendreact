@@ -1,17 +1,17 @@
 import { styled } from "styled-components";
 
-export const CartaoProduto = styled.div`
+export const Card = styled.div`
   border: 1px solid black;
   min-width: 10px;
 
   img {
     border: 1px solid black;
-    height: 300px;
-    width: 200px;
+    height: auto;
+    width: 100%;
   }
 `;
 
-export const DescricaoProduto = styled.div`
+export const ProductDescription = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;

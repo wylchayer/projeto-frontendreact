@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import Produtos from "../Produtos";
-import { Main, CabecalhoListaProdutos, ListaProdutos } from "./style";
+import ProductCard from "../ProductCard";
+import { Main, HeaderProductList, List } from "./style";
 
-const PaginaListaProdutos = (props) => {
+const Home = (props) => {
 
-  const {productsList, cart, setCart, amount, setAmount} = props
+  const {arrayProductList, cart, setCart, amount, setAmount, addProductToCart} = props
 
   const [ordination, setOrdination] = useState('Crescente')
 
@@ -16,8 +16,8 @@ const PaginaListaProdutos = (props) => {
   
   return (
     <Main>
-      <CabecalhoListaProdutos>
-        <p>Quantidade de produtos: {productsList.length}</p>
+      <HeaderProductList>
+        <p>Quantidade de produtos: {arrayProductList.length}</p>
         <div>
           <p>
             Ordenação:
@@ -27,20 +27,20 @@ const PaginaListaProdutos = (props) => {
             </select>
           </p>
         </div>
-      </CabecalhoListaProdutos>
-      <ListaProdutos>
-        {productsList.map(element => {
+      </HeaderProductList>
+      <List>
+        {arrayProductList.map(product => {
           return (
-            <Produtos
-              name={element.name}
-              value={element.value}
-              imageUrl={element.imageUrl}
+            <ProductCard
+              key={product.id}
+              product={product}
+              addProductToCart={addProductToCart}
             />
           )
         })}
-      </ListaProdutos>
+      </List>
     </Main>
   );
 };
 
-export default PaginaListaProdutos;
+export default Home;
