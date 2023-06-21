@@ -13,6 +13,19 @@ function App() {
   const [amount, setAmount] = useState(0);
   const [ordination, setOrdination] = useState("");
 
+  useEffect(() => {
+    const getShoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
+
+    getShoppingCart && setCart(getShoppingCart);
+  }, []);
+
+  useEffect(() => {
+    if (cart.length) {
+      localStorage.setItem("shoppingCart", JSON.stringify(cart));
+      sumAmount();
+    }
+  }, [cart]);
+
   const handleChange = (event, setStatus) => {
     setStatus(event.target.value);
   };
@@ -38,6 +51,14 @@ function App() {
     }
   };
 
+  const sumAmount = () => {
+    setAmount(
+      cart.reduce((totalValue, product) => {
+        return totalValue + product.value * product.quantity;
+      }, 0)
+    );
+  };
+
   const removeProductToCart = (product) => {
     if (product.quantity > 1) {
       const quantityToRemove = cart.map((item) => {
@@ -53,6 +74,10 @@ function App() {
         return item.id !== product.id;
       });
       setCart(productToRemove);
+      if (!productToRemove.length) {
+        localStorage.removeItem("shoppingCart");
+        setAmount(0)
+      }
     }
   };
 
@@ -77,15 +102,9 @@ function App() {
         case "Decrescente":
           return nextProduct.value - currentProduct.value;
         default:
-          return currentProduct
+          return currentProduct;
       }
     });
-
-  console.log(`Valor mínimo: ${minFilter}
-      Valor máximo: ${maxFilter}
-      Busca nome: ${searchFilter}
-      Ordenação: ${ordination}`);
-  console.log(productListRender);
 
   return (
     <Body>
@@ -102,10 +121,6 @@ function App() {
         />
         <Home
           productListRender={productListRender}
-          cart={cart}
-          setCart={setCart}
-          amount={amount}
-          setAmount={setAmount}
           ordination={ordination}
           setOrdination={setOrdination}
           handleChange={handleChange}
@@ -115,7 +130,6 @@ function App() {
           cart={cart}
           setCart={setCart}
           amount={amount}
-          setAmount={setAmount}
           removeProductToCart={removeProductToCart}
         />
       </Ecommerce>

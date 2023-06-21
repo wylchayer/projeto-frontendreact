@@ -4,13 +4,11 @@ import ItemsCard from "../ItemsCard";
 
 const Cart = (props) => {
 
-  const {cart, setCart, amount, setAmount, removeProductToCart} = props
+  const {cart, amount, removeProductToCart} = props
 
   const renderCart = cart.map((product) => {
     return <ItemsCard key={product.id} product={product} removeProductToCart={removeProductToCart} />
   })
-
-  const totalCartValue = cart.reduce((totalValue, product) => {return totalValue + (product.value * product.quantity)}, 0)
 
    return (
     <NavCart>
@@ -18,7 +16,7 @@ const Cart = (props) => {
       <ItemsList>
         {renderCart}
       </ItemsList>
-      <p>Valor Total no carrinho: R${totalCartValue.toFixed(2).replace('.',',')}</p>
+      <p>Valor Total no carrinho: R${amount.toFixed(2).replace('.',',')}</p>
     </NavCart>
   );
 };

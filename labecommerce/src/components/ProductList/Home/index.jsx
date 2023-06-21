@@ -5,7 +5,7 @@ import { Main, HeaderProductList, List } from "./style";
 
 const Home = (props) => {
 
-  const {productListRender, cart, setCart, amount, setAmount, ordination, setOrdination, handleChange, addProductToCart} = props
+  const {productListRender, ordination, setOrdination, handleChange, addProductToCart} = props
   
   return (
     <Main>
