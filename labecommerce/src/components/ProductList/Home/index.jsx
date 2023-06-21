@@ -5,23 +5,17 @@ import { Main, HeaderProductList, List } from "./style";
 
 const Home = (props) => {
 
-  const {arrayProductList, cart, setCart, amount, setAmount, addProductToCart} = props
-
-  const [ordination, setOrdination] = useState('Crescente')
-
-  const handleOrdination = (event) => {
-    console.log(event);
-    setOrdination(event.target.value)
-  }
+  const {productListRender, cart, setCart, amount, setAmount, ordination, setOrdination, handleChange, addProductToCart} = props
   
   return (
     <Main>
       <HeaderProductList>
-        <p>Quantidade de produtos: {arrayProductList.length}</p>
+        <p>Quantidade de produtos: {productListRender.length}</p>
         <div>
           <p>
             Ordenação:
-            <select onChange={handleOrdination} >
+            <select value={ordination} onChange={(event) => handleChange(event, setOrdination)} >
+              <option value="">Sem ordenação</option>
               <option value="Crescente">Crescente</option>
               <option value="Decrescente">Decrescente</option>
             </select>
@@ -29,7 +23,7 @@ const Home = (props) => {
         </div>
       </HeaderProductList>
       <List>
-        {arrayProductList.map(product => {
+        {productListRender.map(product => {
           return (
             <ProductCard
               key={product.id}

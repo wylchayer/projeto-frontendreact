@@ -4,6 +4,10 @@ export const Card = styled.div`
   border: 1px solid black;
   min-width: 10px;
 
+  figure {
+    max-width: 200px;
+  }
+
   img {
     border: 1px solid black;
     height: auto;
