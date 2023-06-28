@@ -1,21 +1,38 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import ProductCard from "../ProductCard";
+import ModalProduct from "../ModalProduct";
 import { Main, List } from "./style";
 
 const Home = (props) => {
   const { productListRender, addProductToCart } = props;
 
+  const [changeModal, setChangeModal] = useState(false);
+  const [productModal, setProductModal] = useState({});
+
+  const handleModal = (product) => {
+    changeModal ? setChangeModal(false) : setChangeModal(true);
+    setProductModal(product);
+  };
+
+  const hasNoProducts = "Não há naves com os filtros informados";
   const renderProducts = productListRender.map((product) => {
     return (
-      <ProductCard
-        key={product.id}
-        product={product}
-        addProductToCart={addProductToCart}
-      />
+      <div key={product.id}>
+        <ProductCard
+          product={product}
+          addProductToCart={addProductToCart}
+          handleModal={handleModal}
+        />
+        {changeModal ? (
+          <ModalProduct
+            product={productModal}
+            setChangeModal={setChangeModal}
+            addProductToCart={addProductToCart}
+          />
+        ) : null}
+      </div>
     );
   });
-  const hasNoProducts = "Não há naves com os filtros informados";
 
   return (
     <Main>

@@ -18,15 +18,14 @@ export const TotalClear = styled.div`
   grid-template: 1fr / 70% 1fr;
   align-items: center;
 
-  p{
+  > p {
     text-align: center;
     flex-grow: 1;
     font-weight: bold;
-  }
-
-  span{
-    font-weight: bold;
-    color: #6f9fc8;
+    > span {
+      /* font-weight: bold;
+      color: #6f9fc8; */
+    }
   }
 `;
 
