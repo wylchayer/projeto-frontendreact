@@ -1,16 +1,37 @@
-import React from 'react'
-import { Item } from './style'
+import React from "react";
+import {
+  Item,
+  MiniImage,
+  ProductData,
+  ProductName,
+  NamePrice,
+  Buttons,
+} from "./style";
 
-const ItemsCard = ({product, removeProductToCart}) => {
-
+const ItemsCard = ({ product, removeProductToCart, addProductToCart }) => {
   return (
     <Item>
-      <p> {product.quantity}x </p>
-      <p> {product.name} </p>
-      <p>Total: R${(product.quantity*product.value).toFixed(2).replace('.',',')}</p>
-      <button onClick={() => removeProductToCart(product)} >Remover</button>
+      <MiniImage>
+        <img src={product.imageUrl} alt="" />
+      </MiniImage>
+      <ProductData>
+        <ProductName>{product.name}</ProductName>
+        <NamePrice>
+          <p>{product.quantity}x</p>
+          <p>
+            {(product.quantity * product.price).toLocaleString("de-DE", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </p>
+        </NamePrice>
+      </ProductData>
+      <Buttons>
+        <button onClick={() => addProductToCart(product)}>+</button>
+        <button onClick={() => removeProductToCart(product)}>-</button>
+      </Buttons>
     </Item>
-  )
-}
+  );
+};
 
-export default ItemsCard
+export default ItemsCard;
