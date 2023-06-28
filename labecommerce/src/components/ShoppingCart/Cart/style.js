@@ -23,8 +23,8 @@ export const TotalClear = styled.div`
     flex-grow: 1;
     font-weight: bold;
     > span {
-      /* font-weight: bold;
-      color: #6f9fc8; */
+      font-weight: bold;
+      color: #6f9fc8;
     }
   }
 `;

@@ -1,9 +1,11 @@
 import * as styled from "styled-components";
 
+import ogBackground from "./assets/og_background.jpg"
+
 export const GlobalStyle = styled.createGlobalStyle`
   * {
     background-color: #000000;
-    background-image: url("http://wiki.ogame.org/skins/ogame/images/og_background.jpg");
+background-image: url(${ogBackground});
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
