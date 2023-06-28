@@ -1,12 +1,12 @@
 import React from "react";
 import { Modal, Container, SpaceShip, Infos, Details, Icon } from "./style";
 
-import iconArmor from "../../../assets/icon-armor.png";
-import iconShield from "../../../assets/icon-shield.png";
-import iconWeapon from "../../../assets/icon-weapon.png";
-import iconSpeed from "../../../assets/icon-speed.png";
-import iconConsumption from "../../../assets/icon-consumption.png";
-import iconCapacity from "../../../assets/icon-capacity.png";
+import iconArmor from "../../../assets/icon-images/icon-armor.png";
+import iconShield from "../../../assets/icon-images/icon-shield.png";
+import iconWeapon from "../../../assets/icon-images/icon-weapon.png";
+import iconSpeed from "../../../assets/icon-images/icon-speed.png";
+import iconConsumption from "../../../assets/icon-images/icon-consumption.png";
+import iconCapacity from "../../../assets/icon-images/icon-capacity.png";
 
 const ModalProduct = ({ product, setChangeModal, addProductToCart }) => {
   
