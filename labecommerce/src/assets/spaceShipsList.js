@@ -1,11 +1,11 @@
-const imgId01 = "http://wiki.ogame.org/images/thumb/6/6e/Ship_Light_Fighter.jpg/180px-Ship_Light_Fighter.jpg"
+import spaceShipId01 from "../assets/spaceship-id-01.jpg"
 
 const spaceShipsList = [
     {
       id: 1,
       name: "Caça Ligeiro",
       price: 4000,
-      imageUrl: imgId01,
+      imageUrl: spaceShipId01,
       armor: 400,
       shield: 20,
       weapon: 80,
