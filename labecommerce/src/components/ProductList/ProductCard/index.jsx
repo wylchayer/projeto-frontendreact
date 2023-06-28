@@ -9,7 +9,8 @@ const ProductCard = ({product, addProductToCart}) => {
       </figure>
       <ProductDescription>
         <p>{product.name}</p>
-        <p>{product.value}</p>
+        {/* <p>R$ {product.price.toFixed(2).replace('.',',')}</p> */}
+        <p>{product.price.toLocaleString('de-DE', {style: 'currency', currency: 'BRL'})}</p>
         <button onClick={() => addProductToCart(product)} >Adicionar ao Carrinho</button>
       </ProductDescription>
     </Card>

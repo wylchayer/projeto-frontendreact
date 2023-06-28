@@ -1,22 +1,38 @@
 import React from "react";
-import { NavCart, ItemsList } from "./style";
+import { NavCart, ItemsList, TotalClear } from "./style";
 import ItemsCard from "../ItemsCard";
 
 const Cart = (props) => {
-
-  const {cart, amount, removeProductToCart} = props
+  const { cart, amount, removeProductToCart, clearCart, addProductToCart } =
+    props;
 
   const renderCart = cart.map((product) => {
-    return <ItemsCard key={product.id} product={product} removeProductToCart={removeProductToCart} />
-  })
+    return (
+      <ItemsCard
+        key={product.id}
+        product={product}
+        removeProductToCart={removeProductToCart}
+        addProductToCart={addProductToCart}
+      />
+    );
+  });
 
-   return (
+  return (
     <NavCart>
       <h2>Carrinho</h2>
-      <ItemsList>
-        {renderCart}
-      </ItemsList>
-      <p>Valor Total no carrinho: R${amount.toFixed(2).replace('.',',')}</p>
+      <TotalClear>
+        <p>
+          Valor Total:{" "}
+          <span>
+            {amount.toLocaleString("de-DE", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </span>
+        </p>
+        <button onClick={clearCart}>Limpar Carrinho</button>
+      </TotalClear>
+      <ItemsList>{renderCart}</ItemsList>
     </NavCart>
   );
 };
