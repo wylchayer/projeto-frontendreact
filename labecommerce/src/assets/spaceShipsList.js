@@ -1,9 +1,11 @@
+import imgId01 from "http://wiki.ogame.org/images/thumb/6/6e/Ship_Light_Fighter.jpg/180px-Ship_Light_Fighter.jpg"
+
 const spaceShipsList = [
     {
       id: 1,
       name: "Caça Ligeiro",
       price: 4000,
-      imageUrl: "http://wiki.ogame.org/images/thumb/6/6e/Ship_Light_Fighter.jpg/180px-Ship_Light_Fighter.jpg",
+      imageUrl: {imgId01},
       armor: 400,
       shield: 20,
       weapon: 80,
