@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
-import { GlobalStyle, Ecommerce, LateralMenu, Body } from "./GlobalStyle";
+import {
+  GlobalStyle,
+  Ecommerce,
+  LateralMenu,
+  Body,
+  Header,
+} from "./GlobalStyle";
 import Filters from "./components/Filters";
 import Home from "./components/ProductList/Home";
 import Cart from "./components/ShoppingCart/Cart";
 import Footer from "./components/Footer";
 import arrayProductList from "./assets/spaceShipsList";
+
+import logo from "./assets/logo.png";
 
 function App() {
   const [minFilter, setMinFilter] = useState();
@@ -138,6 +146,9 @@ function App() {
         <GlobalStyle />
         <Ecommerce>
           <LateralMenu>
+            <Header>
+              <img src={logo} alt="" />
+            </Header>
             <Filters
               minFilter={minFilter}
               setMinFilter={setMinFilter}
@@ -166,7 +177,7 @@ function App() {
             addProductToCart={addProductToCart}
           />
         </Ecommerce>
-        <Footer />
+        <Footer logo={logo} />
       </Body>
     </>
   );
