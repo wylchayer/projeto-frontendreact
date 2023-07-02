@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const NavFilters = styled.div`
-  /* border: 1px solid #6f9fc8; */
   padding: 10px;
   display: flex;
   flex-direction: column;

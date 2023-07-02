@@ -1,11 +1,11 @@
 import * as styled from "styled-components";
 
-import ogBackground from "./assets/og_background.jpg"
+import ogBackground from "./assets/og_background.jpg";
 
 export const GlobalStyle = styled.createGlobalStyle`
   * {
     background-color: #000000;
-background-image: url(${ogBackground});
+    background-image: url(${ogBackground});
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -32,21 +32,26 @@ background-image: url(${ogBackground});
     }
 
     &:active {
-      box-shadow: 2px 0px 5px #6f9fc8,
-                  -2px 0px 5px #6f9fc8,
-                  0px 2px 5px #6f9fc8,
-                  0px -2px 5px #6f9fc8;
+      box-shadow: 2px 0px 5px #6f9fc8, -2px 0px 5px #6f9fc8, 0px 2px 5px #6f9fc8,
+        0px -2px 5px #6f9fc8;
     }
   }
 `;
 
 export const Body = styled.styled.div`
-  margin: 10px;
+  margin: 0.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
 `;
+
+export const Header = styled.styled.header`
+align-self: center;
+  >img{
+    height: 100px;
+  }
+`
 
 export const LateralMenu = styled.styled.div`
   display: flex;
